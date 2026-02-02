@@ -1,5 +1,7 @@
 :{$PORT} {
- root * .
- file_server browse
+file_server {
+    root .
+  } 
 }
+
 
