@@ -1,79 +1,109 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps Inspiration</title>
-    <style>
-        /* Основные настройки, чтобы всё скроллилось */
-        html, body {
-            margin: 0;
-            padding: 0;
-            min-height: 100%;
-            overflow-y: auto !important; /* Разрешаем вертикальный скролл */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e1e2f 0%, #2d2d44 100%);
-            color: #ffffff;
-            line-height: 1.6;
-        }
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>DevOps Inspiration</title>
+   <style>
+       /* Основные настройки, чтобы всё скроллилось */
+       html, body {
+           margin: 0;
+           padding: 0;
+           min-height: 100%;
+           overflow-y: auto !important; /* Разрешаем вертикальный скролл */
+           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+           background: linear-gradient(135deg, #1e1e2f 0%, #2d2d44 100%);
+           color: #ffffff;
+           line-height: 1.6;
+       }
 
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            text-align: center;
-        }
+       .container {
+           max-width: 800px;
+           margin: 50px auto;
+           padding: 20px;
+           text-align: center;
+       }
 
-        .card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
+       .card {
+           background: rgba(255, 255, 255, 0.1);
+           backdrop-filter: blur(10px);
+           border-radius: 20px;
+           padding: 40px;
+           margin-bottom: 30px;
+           border: 1px solid rgba(255, 255, 255, 0.2);
+           box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+           overflow: hidden; /* Чтобы ракета не вылетала за границы красиво */
+       }
 
-        h1 { color: #00d2ff; font-size: 2.5rem; }
-        .emoji { font-size: 3rem; margin-bottom: 20px; }
-        .quote { font-style: italic; font-size: 1.2rem; color: #e0e0e0; }
-        .author { color: #00d2ff; font-weight: bold; margin-top: 10px; display: block; }
-        
-        footer { margin-top: 50px; opacity: 0.6; font-size: 0.9rem; }
-    </style>
+       h1 { color: #00d2ff; font-size: 2.5rem; }
+
+       /* Настройки ракеты */
+       .emoji { font-size: 3rem; margin-bottom: 20px; }
+
+       .rocket {
+           display: inline-block;
+           animation: takeOff 3s linear infinite;
+           filter: drop-shadow(0 0 10px #00d2ff);
+       }
+
+       /* Анимация взлета */
+       @keyframes takeOff {
+           0% {
+               transform: translateY(100px) scale(0.8);
+               opacity: 0;
+           }
+           20% {
+               opacity: 1;
+               transform: translateY(0) scale(1.1);
+           }
+           80% {
+               opacity: 1;
+               transform: translateY(-100px) scale(1.1);
+           }
+           100% {
+               transform: translateY(-200px) scale(0.5);
+               opacity: 0;
+           }
+       }
+
+       .quote { font-style: italic; font-size: 1.2rem; color: #e0e0e0; }
+       .author { color: #00d2ff; font-weight: bold; margin-top: 10px; display: block; }
+
+       footer { margin-top: 50px; opacity: 0.6; font-size: 0.9rem; }
+   </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="card">
-        <div class="emoji">🚀</div>
-        <h1>Привет, будущая легенда DevOps!</h1>
-        <p>Путь в тысячи YAML-файлов начинается с первой исправленной ошибки.</p>
-    </div>
+   <div class="card">
+       <div class="emoji rocket">🚀</div>
+       <h1>Привет, будущая легенда DevOps!</h1>
+       <p>Путь в тысячи YAML-файлов начинается с первой исправленной ошибки.</p>
+   </div>
 
-    <div class="card">
-        <p class="quote">"Автоматизация — это не про то, чтобы делать меньше работы. Это про то, чтобы делать великие вещи, не отвлекаясь на рутину."</p>
-        <span class="author">— Манифест продуктивности</span>
-    </div>
+   <div class="card">
+       <p class="quote">"Автоматизация — это не про то, чтобы делать меньше работы. Это про то, чтобы делать великие вещи, не отвлекаясь на рутину."</p>
+       <span class="author">— Манифест продуктивности</span>
+   </div>
 
-    <div class="card">
-        <p class="quote">"Твой первый упавший билд — это не провал. Это боевое крещение. В мире DevOps не ошибается только тот, кто ничего не деплоит."</p>
-        <div class="emoji">🛠️</div>
-    </div>
+   <div class="card">
+       <p class="quote">"Твой первый упавший билд — это не провал. Это боевое крещение. В мире DevOps не ошибается только тот, кто ничего не деплоит."</p>
+       <div class="emoji">🛠️</div>
+   </div>
 
-    <div class="card">
-        <p class="quote">"Docker — твой кит, Kubernetes — твой океан. Просто продолжай плыть!"</p>
-        <div class="emoji">🐳</div>
-    </div>
+   <div class="card">
+       <p class="quote">"Docker — твой кит, Kubernetes — твой океан. Просто продолжай плыть!"</p>
+       <div class="emoji">🐳</div>
+   </div>
 
-    <div class="card">
-        <h1>Держись!</h1>
-        <p>Каждый Commit делает тебя сильнее. Railway уже видит твой прогресс!</p>
-    </div>
+   <div class="card">
+       <h1>Держись!</h1>
+       <p>Каждый Commit делает тебя сильнее. Railway уже видит твой прогресс!</p>
+   </div>
 
-    <footer>
-        Сделано с теплотой для начинающих DevOps школа PASV | MARTA D. 2026
-    </footer>
+   <footer>
+       Сделано с теплотой для начинающих DevOps школа PASV | MARTA D. 2026
+   </footer>
 </div>
 
 </body>
