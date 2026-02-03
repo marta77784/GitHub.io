@@ -1,121 +1,80 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <style>
-  html, body {
-    overflow: visible !important;
-    overflow-y: auto !important;
-    height: auto !important;
-    min-height: 100vh !important;
-    margin: 0;
-    padding: 0;
-  }
-</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Добро пожаловать</title>
+    <title>DevOps Inspiration</title>
     <style>
-        * {
+        /* Основные настройки, чтобы всё скроллилось */
+        html, body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            min-height: 100%;
+            overflow-y: auto !important; /* Разрешаем вертикальный скролл */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e1e2f 0%, #2d2d44 100%);
+            color: #ffffff;
+            line-height: 1.6;
         }
-        
-        body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #8B0000 0%, #5C0000 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        body::before {
-            content: '🌹';
-            position: absolute;
-            font-size: 400px;
-            opacity: 0.1;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 0;
-        }
-        
+
         .container {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 30px;
-            padding: 80px 50px;
-            max-width: 900px;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-        
-        h1 {
-            font-size: 3.5em;
-            color: #8B0000;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        .welcome-text {
-            font-size: 1.5em;
-            color: #5C0000;
-            line-height: 1.8;
-            margin-bottom: 50px;
-            font-style: italic;
-        }
-        
-        .quotes {
-            margin-top: 60px;
-            font-size: 1.3em;
-            color: #8B0000;
-            font-weight: 500;
-            line-height: 2.2;
-        }
-        
-        .quotes p {
-            margin: 25px 0;
+            max-width: 800px;
+            margin: 50px auto;
             padding: 20px;
-            background: linear-gradient(135deg, rgba(139, 0, 0, 0.05), rgba(92, 0, 0, 0.05));
-            border-radius: 15px;
-            border-left: 5px solid #8B0000;
+            text-align: center;
         }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        h1 { color: #00d2ff; font-size: 2.5rem; }
+        .emoji { font-size: 3rem; margin-bottom: 20px; }
+        .quote { font-style: italic; font-size: 1.2rem; color: #e0e0e0; }
+        .author { color: #00d2ff; font-weight: bold; margin-top: 10px; display: block; }
         
-        .rose {
-            font-size: 80px;
-            margin: 30px 0;
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
+        footer { margin-top: 50px; opacity: 0.6; font-size: 0.9rem; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Добро пожаловать!</h1>
-        
-        <div class="rose">🌹</div>
-        
-        <p class="welcome-text">
-            Приветствую вас на моём сайте, наполненном добром, светом и теплотой. 
-            Пусть каждый момент, проведённый здесь, дарит вам радость и вдохновение.
-        </p>
-        
-        <div class="quotes">
-            <p>✨ Доброта — это язык, который глухой услышит и слепой увидит ✨</p>
-            <p>🌟 Каждый день — новая возможность стать лучше и подарить миру свет 🌟</p>
-            <p>💫 Там, где любовь и доброта, всегда царит гармония 💫</p>
-            <p>🌸 Пусть ваше сердце будет полно счастья, а душа — спокойствия 🌸</p>
-        </div>
+
+<div class="container">
+    <div class="card">
+        <div class="emoji">🚀</div>
+        <h1>Привет, будущая легенда DevOps!</h1>
+        <p>Путь в тысячи YAML-файлов начинается с первой исправленной ошибки.</p>
     </div>
+
+    <div class="card">
+        <p class="quote">"Автоматизация — это не про то, чтобы делать меньше работы. Это про то, чтобы делать великие вещи, не отвлекаясь на рутину."</p>
+        <span class="author">— Манифест продуктивности</span>
+    </div>
+
+    <div class="card">
+        <p class="quote">"Твой первый упавший билд — это не провал. Это боевое крещение. В мире DevOps не ошибается только тот, кто ничего не деплоит."</p>
+        <div class="emoji">🛠️</div>
+    </div>
+
+    <div class="card">
+        <p class="quote">"Docker — твой кит, Kubernetes — твой океан. Просто продолжай плыть!"</p>
+        <div class="emoji">🐳</div>
+    </div>
+
+    <div class="card">
+        <h1>Держись!</h1>
+        <p>Каждый Commit делает тебя сильнее. Railway уже видит твой прогресс!</p>
+    </div>
+
+    <footer>
+        Сделано с теплотой для начинающих DevOps | 2026
+    </footer>
+</div>
+
 </body>
 </html>
-
