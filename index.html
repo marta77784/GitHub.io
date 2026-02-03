@@ -3,78 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps Inspiration</title>
+    <title>Marta DevOps Inspiration</title>
     <style>
-        /* Основные настройки, чтобы всё скроллилось */
+        /* Главные настройки скролла и фона */
         html, body {
             margin: 0;
             padding: 0;
-            min-height: 100%;
-            overflow-y: auto !important; /* Разрешаем вертикальный скролл */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e1e2f 0%, #2d2d44 100%);
-            color: #ffffff;
-            line-height: 1.6;
+            min-height: 100vh; /* Чтобы фон тянулся */
+            overflow-y: auto !important; /* Наш долгожданный скролл */
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background: #0f172a; /* Темно-синий "девопсовский" цвет */
+            color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
+            width: 90%;
+            max-width: 600px;
+            padding: 40px 20px;
             text-align: center;
         }
 
-        .card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
+        .main-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid #38bdf8;
+            border-radius: 24px;
             padding: 40px;
-            margin-bottom: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+            backdrop-filter: blur(8px);
+            margin-bottom: 20px;
         }
 
-        h1 { color: #00d2ff; font-size: 2.5rem; }
-        .emoji { font-size: 3rem; margin-bottom: 20px; }
-        .quote { font-style: italic; font-size: 1.2rem; color: #e0e0e0; }
-        .author { color: #00d2ff; font-weight: bold; margin-top: 10px; display: block; }
+        h1 {
+            color: #38bdf8;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        #quote-text {
+            font-size: 1.4rem;
+            line-height: 1.5;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Кнопка */
+        .btn {
+            background: #38bdf8;
+            color: #0f172a;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background: #7dd3fc;
+            transform: scale(1.05);
+        }
+
+        .footer {
+            margin-top: auto;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        /* Дополнительные карточки для проверки скролла */
+        .extra-content {
+            margin-top: 40px;
+            text-align: left;
+            width: 100%;
+        }
         
-        footer { margin-top: 50px; opacity: 0.6; font-size: 0.9rem; }
+        .step {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border-left: 4px solid #38bdf8;
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="card">
-        <div class="emoji">🚀</div>
-        <h1>Привет, будущая легенда DevOps!</h1>
-        <p>Путь в тысячи YAML-файлов начинается с первой исправленной ошибки.</p>
+    <div class="container">
+        <div class="main-card">
+            <div id="emoji" style="font-size: 3rem;">🌟</div>
+            <h1>DevOps Life</h1>
+            <p id="quote-text">Нажми на кнопку, чтобы получить заряд мотивации!</p>
+            <button class="btn" onclick="nextQuote()">Дальше 🚀</button>
+        </div>
+
+        <div class="extra-content">
+            <h3>Твой путь на сегодня:</h3>
+            <div class="step">✅ Понять, почему не скроллился сайт</div>
+            <div class="step">✅ Поправить код через GitHub</div>
+            <div class="step">⏳ Задеплоить на Railway</div>
+            <div class="step">🚀 Стать на шаг ближе к Junior DevOps</div>
+        </div>
     </div>
 
-    <div class="card">
-        <p class="quote">"Автоматизация — это не про то, чтобы делать меньше работы. Это про то, чтобы делать великие вещи, не отвлекаясь на рутину."</p>
-        <span class="author">— Манифест продуктивности</span>
+    <div class="footer">
+        © 2026 Marta77784 | Создано с любовью к коду
     </div>
 
-    <div class="card">
-        <p class="quote">"Твой первый упавший билд — это не провал. Это боевое крещение. В мире DevOps не ошибается только тот, кто ничего не деплоит."</p>
-        <div class="emoji">🛠️</div>
-    </div>
+    <script>
+        const quotes = [
+            { text: "Всё есть код. Даже твой успех!", emoji: "💻" },
+            { text: "Твой билд упал, чтобы ты научилась его поднимать.", emoji: "🧱" },
+            { text: "Docker — это коробка конфет. Ты всегда знаешь, что внутри.", emoji: "🐳" },
+            { text: "CI/CD — это как чистка зубов: делай это регулярно, и проблем не будет.", emoji: "🪥" },
+            { text: "Не бойся ошибаться в терминале. Бойся ничего в нем не писать.", emoji: "⌨️" }
+        ];
 
-    <div class="card">
-        <p class="quote">"Docker — твой кит, Kubernetes — твой океан. Просто продолжай плыть!"</p>
-        <div class="emoji">🐳</div>
-    </div>
+        let index = 0;
 
-    <div class="card">
-        <h1>Держись!</h1>
-        <p>Каждый Commit делает тебя сильнее. Railway уже видит твой прогресс!</p>
-    </div>
-
-    <footer>
-        Сделано с теплотой для начинающих DevOps школа PASV | MARTA D. 2026
-    </footer>
-</div>
+        function nextQuote() {
+            index = (index + 1) % quotes.length;
+            document.getElementById('quote-text').innerText = quotes[index].text;
+            document.getElementById('emoji').innerText = quotes[index].emoji;
+        }
+    </script>
 
 </body>
 </html>
